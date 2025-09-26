@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+import { scan } from "react-scan";
 import {
   createRootRoute,
   HeadContent,
@@ -7,6 +8,10 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+
+scan({
+  enabled: process.env.NODE_ENV === "development",
+});
 
 export const Route = createRootRoute({
   component: RootComponent,
