@@ -7,12 +7,8 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import appCss from "@/styles/app.css?url";
-
-scan({
-  enabled: process.env.NODE_ENV === "development",
-});
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -34,6 +30,12 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  useEffect(() => {
+    scan({
+      enabled: true,
+    });
+  }, []);
+
   return (
     <RootDocument>
       <Outlet />
