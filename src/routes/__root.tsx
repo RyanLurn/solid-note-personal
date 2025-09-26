@@ -38,6 +38,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
       <head>
+        <link href="/vite.svg" rel="icon" />
         <HeadContent />
       </head>
       <body>
