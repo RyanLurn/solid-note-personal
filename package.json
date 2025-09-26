@@ -1,14 +1,29 @@
 {
   "name": "solid-note-personal",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
     "format": "pnpm exec biome format --write",
     "lint": "pnpm exec biome lint --write",
     "check": "pnpm exec biome check --write"
   },
-  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@tanstack/react-router": "^1.132.7",
+    "@tanstack/react-start": "^1.132.9",
+    "@vitejs/plugin-react": "^5.0.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.7"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
-    "lefthook": "^1.13.4"
-  }
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "lefthook": "^1.13.4",
+    "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "packageManager": "pnpm@10.17.1"
 }
