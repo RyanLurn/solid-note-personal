@@ -6,6 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
+    "includes": ["**", "!**/routeTree.gen.ts"],
     "ignoreUnknown": false
   },
   "formatter": {
@@ -27,9 +28,6 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
-      },
-      "style": {
-        "useComponentExportOnlyModules": "on"
       }
     }
   },
