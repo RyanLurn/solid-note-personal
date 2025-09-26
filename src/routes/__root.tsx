@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import appCss from "@/styles/app.css?url";
 
 scan({
   enabled: process.env.NODE_ENV === "development",
@@ -16,6 +17,7 @@ scan({
 export const Route = createRootRoute({
   component: RootComponent,
   head: () => ({
+    links: [{ href: appCss, rel: "stylesheet" }],
     meta: [
       {
         charSet: "utf-8",
