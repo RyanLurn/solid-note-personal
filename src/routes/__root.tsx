@@ -7,15 +7,15 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
-import type { ReactNode } from "react";
-
-scan({
-  enabled: process.env.NODE_ENV === "development",
-});
+import { type ReactNode, useEffect } from "react";
+import { Providers } from "@/components/providers";
+import { ModeToggle } from "@/components/utils/mode-toggle";
+import appCss from "@/styles/app.css?url";
 
 export const Route = createRootRoute({
   component: RootComponent,
   head: () => ({
+    links: [{ href: appCss, rel: "stylesheet" }],
     meta: [
       {
         charSet: "utf-8",
@@ -32,9 +32,18 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  useEffect(() => {
+    scan({
+      enabled: true,
+    });
+  }, []);
+
   return (
     <RootDocument>
-      <Outlet />
+      <Providers>
+        <Outlet />
+        <ModeToggle className="fixed top-2 right-2" variant="outline" />
+      </Providers>
     </RootDocument>
   );
 }
