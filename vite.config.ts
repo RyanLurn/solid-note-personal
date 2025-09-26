@@ -4,7 +4,15 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [tsConfigPaths(), tanstackStart(), viteReact()],
+  plugins: [
+    tsConfigPaths(),
+    tanstackStart(),
+    viteReact({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
+  ],
   server: {
     port: 3000,
   },
