@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { type ReactNode, useEffect } from "react";
+import { Providers } from "@/components/providers";
 import appCss from "@/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -38,7 +39,9 @@ function RootComponent() {
 
   return (
     <RootDocument>
-      <Outlet />
+      <Providers>
+        <Outlet />
+      </Providers>
     </RootDocument>
   );
 }
