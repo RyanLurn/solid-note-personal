@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode, useEffect } from "react";
 import { Providers } from "@/components/providers";
+import { ModeToggle } from "@/components/utils/mode-toggle";
 import appCss from "@/styles/app.css?url";
 
 export const Route = createRootRoute({
@@ -41,6 +42,7 @@ function RootComponent() {
     <RootDocument>
       <Providers>
         <Outlet />
+        <ModeToggle className="fixed top-2 right-2" variant="outline" />
       </Providers>
     </RootDocument>
   );
